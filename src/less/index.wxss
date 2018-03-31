@@ -1,0 +1,42 @@
+body .section {
+  position: relative;
+  background-image: url('../img/background2.png');
+}
+body .section .component {
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+}
+body .section .component.first {
+  background-image: url('../img/logoIndex.png');
+}
+body .section .component.second {
+  background-image: url('../img/slogan.png');
+}
+body .section .component.right {
+  background-image: url('../img/right.png');
+}
+body .section .component.left {
+  background-image: url('../img/left.png');
+}
+body .section .component.mind {
+  background-image: url('../img/mind.png');
+}
+body .section .component.dialog {
+  background-image: url('../img/dialog.png');
+}
+body .section .component.people {
+  background-image: url('../img/people.png');
+}
+body .section .component.bar1 {
+  background-image: url('../img/bar.png');
+}
+body .section .component.polyline1 {
+  background-image: url('../img/polyline.png');
+}
+body .section .component.pie1 {
+  background-image: url('../img/pie.png');
+}
+body .section.index {
+  background: url('../img/background1.png');
+}

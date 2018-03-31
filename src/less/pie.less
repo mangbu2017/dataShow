@@ -1,0 +1,26 @@
+.pie{
+    canvas{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .text{
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease 1s;
+    }
+}
+
+.loadComponent{
+    .text{
+        opacity: 1;
+    }
+}
+
+.leaveComponent{
+    .text{
+        opacity: 0;
+    }
+}

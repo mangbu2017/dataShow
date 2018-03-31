@@ -1,0 +1,27 @@
+.polyline {
+  position: absolute;
+}
+.polyline canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.polyline .footer {
+  position: absolute;
+  left: 0px;
+  height: 25px;
+  line-height: 25px;
+  bottom: -25px;
+}
+.polyline .footer .type {
+  text-align: center;
+  display: inline-block;
+  transition: all 2s ease 1.2s;
+  opacity: 0;
+}
+选择器必须相同 否则无法触发transition .loadComponent .footer .type {
+  opacity: 1;
+}
+.leaveComponent .footer .type {
+  opacity: 0;
+}

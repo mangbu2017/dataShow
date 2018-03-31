@@ -1,0 +1,59 @@
+.bar{
+    .row{
+        height: 25px;
+        margin: 15px 0;
+        .name{
+            float: left;
+            width: 60px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+        .outLoader{
+            float: left;
+            height: 20px;
+            .inLoader{
+                width: 0%;
+                height: 20px;
+                border-radius: 8px;
+                transition: all 1s ease-in 0.8s;
+            }
+        }
+        .per{
+            float: left;
+            width: 20px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            opacity: 0;
+            transition: all 1s ease-out 1.8s;
+        }
+    }
+}
+
+.loadComponent{
+    .row{
+        .outLoader{
+            .inLoader{
+                width: 100%;
+            }
+        }
+        .per{
+            opacity: 1;
+        }
+    }
+}
+
+.leaveComponent{
+    .row{
+        .outLoader{
+            .inLoader{
+                width: 0%;
+            }
+        }
+        .per{
+            opacity: 0;
+        }
+    }
+}
+
