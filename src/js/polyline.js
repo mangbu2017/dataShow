@@ -11,8 +11,8 @@ let Polyline = (options) => {
     // 通过get(0)获得原生dom
     let ctx = polylineCanvas.getContext('2d');
     let times = 2;
-    polylineCanvas.width = parseInt(options.css.width)*times;
-    polylineCanvas.height = parseInt(options.css.height)*times;
+    polylineCanvas.width = parseInt(options.css.width) * times;
+    polylineCanvas.height = parseInt(options.css.height) * times;
     component.append(polylineCanvas);
     let width = polylineCanvas.width;
     let height = polylineCanvas.height;
@@ -22,27 +22,30 @@ let Polyline = (options) => {
     let types = data.length + 1;
     let typelength = width / types;
     var footer = $('<div/>').addClass('footer').css({
-        'padding': '0 ' + typelength/times/2 + 'px',
+        'padding': '0 ' + (typelength / times/ 2) + 'px',
     });
 
     for(let i = 0; i < types - 1; i ++){
         let div = $('<div/>').text(data[i][0]).css({
-            'width': typelength/times + 'px',
+            'width': (typelength / times) + 'px',
         }).addClass('type')
         footer.append(div);
     }
+    console.log(options.delay);
     component.append(footer);
 
     // 通过给component注册同名的事件来触发
     component.on('in', function(){
         // console.log('触发in事件')
-        let s = 0;
-        for (let i = 0; i < 100; i ++){
-            setTimeout(function(){
-                s += 0.01;
-                draw(s);
-            }, 30 * i);
-        }
+        setTimeout(() => {
+            let s = 0;
+            for (let i = 0; i < 100; i ++){
+                setTimeout(function(){
+                    s += 0.01;
+                    draw(s);
+                }, 30 * i);
+            }
+        }, options.delay + 500)
     })
     // debugger;
     component.on('out', function(){
@@ -56,12 +59,9 @@ let Polyline = (options) => {
         }
     })
 
-
-    
-
     function draw(per){
-        polylineCanvas.width = parseInt(options.css.width)*times;
-        polylineCanvas.height = parseInt(options.css.height)*times;
+        polylineCanvas.width = parseInt(options.css.width) * times;
+        polylineCanvas.height = parseInt(options.css.height) * times;
 
         ctx.strokeStyle = 'red';
         ctx.fillStyle = 'skyblue';
@@ -75,6 +75,7 @@ let Polyline = (options) => {
             ctx.moveTo(i * typelength, 0);
             ctx.lineTo(i * typelength, height);
         }
+
         ctx.stroke();
 
         data.forEach((ele, index) => {

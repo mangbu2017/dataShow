@@ -85,6 +85,7 @@ let Pie = (options) => {
         ctx1.arc(r, r, r, start, Math.PI * count1, 1);
         ctx1.fill();
     }   
+    console.log(options.delay);
     // draw();
     component.on('in', function(){
         var count1 = 3.5

@@ -1,4 +1,5 @@
 import '../less/component.less';
+
 let Component = (options) => {
     let component = $('<div/>').addClass('component');
     let id = new Date().getTime() + '_com';
@@ -14,6 +15,7 @@ let Component = (options) => {
             options.animateIn && component.animate(options.animateIn);
         }, options.delay || 0);
     })
+
     component.on('out', function(){
         component.removeClass('loadComponent');
         component.addClass('leaveComponent');
